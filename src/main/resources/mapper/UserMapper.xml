@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.example.dao.UserMapper">
+    <sql id="selectUser">
+        id,user_name,password,salt,email,type,status,activation_code,header_url,create_time
+    </sql>
+
+    <sql id="insertUser">
+       user_name,password,salt,email,type,status,activation_code,header_url,create_time
+    </sql>
+
+    <select id="selectUserById" resultType="User">
+        select <include refid="selectUser"/>
+        from user
+        where id=#{id}
+    </select>
+
+
+    <select id="selectUserByName" resultType="User">
+        select <include refid="selectUser"/>
+        from text.user
+        where user_name=#{userName}
+    </select>
+
+    <select id="selectUserByEmail" resultType="User">
+        select <include refid="selectUser"/>
+        from user
+        where email=#{email}
+    </select>
+
+    <!--id是在数据库中自增的，这里回显给mybatis 所以需要映射哪个是id-->
+    <insert id="insertUser" parameterType="User" keyProperty="id">
+        insert into user(<include refid="insertUser"/>) values (
+        #{userName},#{password},#{salt},#{email},#{type},#{status},#{activationCode},#{headerUrl},#{createTime} )
+    </insert>
+
+
+    <update id="updateStatus">
+        update user set status=#{status} where id=#{id}
+    </update>
+    <update id="updateHeader">
+        update user set header_url=#{header} where id=#{id}
+    </update>
+    <update id="updatePassword">
+        update user set password=#{password} where id=#{id}
+    </update>
+
+</mapper>
