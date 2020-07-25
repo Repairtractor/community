@@ -22,7 +22,7 @@
 
     <select id="selectUserByName" resultType="User">
         select <include refid="selectUser"/>
-        from text.user
+        from user
         where user_name=#{userName}
     </select>
 

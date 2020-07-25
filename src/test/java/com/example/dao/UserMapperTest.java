@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.entity.User;
+import com.example.util.MailClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,9 @@ public class UserMapperTest {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private MailClient mailClient;
 
     @Test
     public void test(){
@@ -33,7 +37,11 @@ public class UserMapperTest {
         if (userMapper.updateHeader(150, "7777") > 0) System.out.println("修改成功");
         if (userMapper.updateStatus(150, 3) > 0) System.out.println("修改成功");
         if (userMapper.updatePassword(150, "7777") > 0) System.out.println("修改成功");
+    }
 
+    @Test
+    public void test3(){
+        mailClient.sendMail("13197149229@163.com","激活注册","welcome to spring");
     }
 
 }

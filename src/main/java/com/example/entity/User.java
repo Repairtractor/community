@@ -1,7 +1,6 @@
 package com.example.entity;
 
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 public class User {
@@ -136,7 +135,7 @@ public class User {
     return createTime;
   }
 
-  public void setCreateTime(Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 
