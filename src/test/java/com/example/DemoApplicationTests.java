@@ -14,4 +14,9 @@ class DemoApplicationTests {
         logger.info("hello world");
     }
 
+    @Test
+    public void test(){
+        System.out.println("hello git");
+    }
+
 }
