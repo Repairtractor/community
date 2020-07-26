@@ -17,4 +17,13 @@ public interface CommunityConstant {
      */
     int ACTIVATION_FAILURE = 2;
 
+    /**
+     * 默认有效存储时间ticket
+     */
+    int DEFAULT_EXPIRED_SECOND=3600*12;
+
+    /**
+     * 记住状态下的ticket存储时间
+     */
+    int REMEMBER_EXPIRED_SECOND=3600*12*100;
 }

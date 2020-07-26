@@ -13,10 +13,5 @@ class DemoApplicationTests {
         Logger logger= LoggerFactory.getLogger(this.getClass());
         logger.info("hello world");
     }
-
-    @Test
-    public void test(){
-        System.out.println("hello git");
-    }
-
+    
 }

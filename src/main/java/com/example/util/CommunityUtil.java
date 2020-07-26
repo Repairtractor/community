@@ -3,6 +3,8 @@ package com.example.util;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.DigestUtils;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.UUID;
 
 public class CommunityUtil {
@@ -20,6 +22,21 @@ public class CommunityUtil {
             return null;
         }
         return DigestUtils.md5DigestAsHex(key.getBytes());
+    }
+
+
+    /**
+     * 获取cookie的值
+     *
+     * @param request 请求域
+     * @param name    想要获取的cookie名字
+     * @return cookie的值
+     */
+    public static String getCookie(HttpServletRequest request, String name) {
+        if (request==null||request.getCookies()==null) return null;
+        for (Cookie cookie : request.getCookies())
+            if (cookie!=null&&cookie.getName().equals(name)) return cookie.getValue();
+        return null;
     }
 
 }

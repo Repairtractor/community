@@ -1,6 +1,8 @@
 package com.example.service;
 
+import com.example.dao.LoginTicketMapper;
 import com.example.dao.UserMapper;
+import com.example.entity.LoginTicket;
 import com.example.entity.User;
 import com.example.util.CommunityConstants;
 import com.example.util.CommunityUtil;
@@ -19,6 +21,10 @@ import java.util.Random;
 
 @Service
 public class UserService {
+
+    @Autowired
+    private LoginTicketMapper loginMapper;
+
     @Autowired
     private UserMapper userMapper;
 
@@ -98,11 +104,66 @@ public class UserService {
     public CommunityConstants acativation(int userId, String code) {
         User user = userMapper.selectUserById(userId);
         if (user.getStatus() == 1) return CommunityConstants.ACTIVATION_REPEAT;
-        else if (user.getActivationCode().equals(code)){
-            userMapper.updateStatus(user.getId(),1);
+        else if (user.getActivationCode().equals(code)) {
+            userMapper.updateStatus(user.getId(), 1);
             return CommunityConstants.ACTIVATION_SUCCESS;
+        } else return CommunityConstants.ACTIVATION_FAILURE;
+    }
+
+    /**
+     * 处理登陆请求
+     *
+     * @param userName
+     * @param password
+     * @param expiredSeconds 超时时间
+     * @return
+     */
+    public Map<String, Object> login(String userName, String password, int expiredSeconds) {
+        Map<String, Object> map = new HashMap<>();
+
+        //空值处理
+        if (StringUtils.isBlank(userName)) {
+            map.put("userNameMsg", "账号不能为空");
+            return map;
         }
-        else return CommunityConstants.ACTIVATION_FAILURE;
+
+        if (StringUtils.isBlank(password)) {
+            map.put("passwordMsg", "密码不能为空");
+            return map;
+        }
+
+        //验证账号
+        User user = userMapper.selectUserByName(userName);
+        if (user == null) {
+            map.put("userNameMsg", "账号不存在");
+            return map;
+        }
+        if (user.getStatus() == 0) {
+            map.put("userNameMsg", "该账号为激活");
+            return map;
+        }
+
+        String password1 = CommunityUtil.md5(password + user.getSalt());
+        if (user.getPassword().equals(password1)) {
+            map.put("passwordMsg", "密码错误");
+            return map;
+        }
+
+        LoginTicket loginTicket = new LoginTicket(user.getId(), CommunityUtil.generateUUID().toString(), 0,
+                new Date(System.currentTimeMillis() + expiredSeconds * 1000));
+
+        loginMapper.insertTicket(loginTicket);
+        map.put("ticket", loginTicket.getTicket());
+        return map;
+    }
+
+    public LoginTicket selectTicket(String ticket){
+        return loginMapper.selectTicket(ticket);
+    }
+
+
+    public void logout(String ticket){
+        loginMapper.updateTicket(ticket,1);
     }
 
 
