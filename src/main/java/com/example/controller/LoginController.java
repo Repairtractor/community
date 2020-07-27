@@ -67,7 +67,7 @@ public class LoginController {
     @RequestMapping(path = "/activation/{userId}/{code}", method = RequestMethod.GET)
     public String getActivation(Model model, @PathVariable("userId") int userId, @PathVariable("code") String code) {
 
-        System.out.println("收到链接");
+
         CommunityConstants constants = userService.acativation(userId, code);
         if (ACTIVATION_SUCCESS.equals(constants)) {
             model.addAttribute("msg", "激活成功，即将跳转登陆页面");
@@ -105,7 +105,7 @@ public class LoginController {
     @PostMapping(path = "/login")
     public String login(String userName,String password,String code,boolean rememberMe,HttpServletResponse response,HttpSession session,Model model){
         String kaptcha= (String) session.getAttribute("kaptcha");
-        System.out.println(code+"\t"+kaptcha);
+
         if (StringUtils.isBlank(kaptcha)||StringUtils.isBlank(code)||!StringUtils.equalsIgnoreCase(kaptcha,code)){
             model.addAttribute("codeMsg","验证码不正确");
             return "site/login";

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c7d52d7d-d55a-40d6-9562-3eca7fae69ef" name="默认的" comment="第三次提交，添加了登录功能，页面数据显示登录用户">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/DemoApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/DisucssPostController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/dao/DiscussPostMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/DiscussPost.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Page.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/DiscussPostService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/util/CommunityConstant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/util/CommunityConstants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/util/CommunityUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/util/MailClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/DiscussPostMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/discuss-detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/letter.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/captcha.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/letter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mail/activation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/mail/forget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/admin/data.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/discuss-detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/followee.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/follower.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/forget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/letter-detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/letter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/my-post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/my-reply.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/notice-detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/operate-result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/setting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/DemoApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/dao/DiscussPostMapperTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/dao/UserMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/site/setting.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../apache-maven-3.6.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1f82Hm5Lra1RgAOTHyHPzzlkFCL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="新增" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/site" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DemoApplication">
+    <configuration name="LoginMapperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.example.dao.LoginMapperTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginMapperTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.example.dao.LoginMapperTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.example.dao.UserMapperTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.example.dao.UserMapperTest" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="community" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.DemoApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.UserMapperTest.test" />
+      <item itemvalue="JUnit.UserMapperTest.test3" />
+      <item itemvalue="JUnit.LoginMapperTest.test" />
+      <item itemvalue="JUnit.LoginMapperTest.test1" />
+      <item itemvalue="Spring Boot.DemoApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LoginMapperTest.test1" />
+        <item itemvalue="JUnit.LoginMapperTest.test" />
+        <item itemvalue="JUnit.UserMapperTest.test3" />
+        <item itemvalue="JUnit.UserMapperTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c7d52d7d-d55a-40d6-9562-3eca7fae69ef" name="默认的" comment="" />
+      <created>1595585313637</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595585313637</updated>
+      <workItem from="1595585319918" duration="191000" />
+      <workItem from="1595586607375" duration="17095000" />
+      <workItem from="1595670960542" duration="34000" />
+      <workItem from="1595671112035" duration="15750000" />
+      <workItem from="1595747729146" duration="660000" />
+      <workItem from="1595748466260" duration="11311000" />
+      <workItem from="1595773160774" duration="322000" />
+      <workItem from="1595773535709" duration="360000" />
+      <workItem from="1595773976833" duration="25000" />
+      <workItem from="1595774026841" duration="616000" />
+      <workItem from="1595774648914" duration="206000" />
+      <workItem from="1595812443267" duration="28000" />
+      <workItem from="1595812571115" duration="12137000" />
+    </task>
+    <task id="LOCAL-00001" summary="第二次提交，添加了注册功能">
+      <created>1595662496068</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595662496068</updated>
+    </task>
+    <task id="LOCAL-00002" summary="第三次提交，添加了登录功能，页面数据显示登录用户">
+      <created>1595774316644</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595774316644</updated>
+    </task>
+    <task id="LOCAL-00003" summary="第三次提交，添加了登录功能，页面数据显示登录用户">
+      <created>1595812982439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595812982439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="第二次提交，添加了注册功能" />
+    <MESSAGE value="第三次提交，添加了登录功能，页面数据显示登录用户" />
+    <option name="LAST_COMMIT_MESSAGE" value="第三次提交，添加了登录功能，页面数据显示登录用户" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="597" y="320" key="#Notifications" timestamp="1595774488698">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="597" y="320" key="#Notifications/0.0.1440.900@0.0.1440.900" timestamp="1595774488698" />
+    <state x="540" y="235" key="#Web浏览器" timestamp="1595643887141">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="540" y="235" key="#Web浏览器/0.0.1440.900@0.0.1440.900" timestamp="1595643887141" />
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595730461225">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595730461225" />
+    <state x="556" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595774617192">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="556" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1595774617192" />
+    <state x="467" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1595819821520">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="467" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1595819821520" />
+    <state x="458" y="204" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1595752117844">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="204" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595752117844" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1595813014580">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1595813014580" />
+    <state x="593" y="354" key="Github.ShareDialog" timestamp="1595774441854">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="593" y="354" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1595774441854" />
+    <state width="1440" height="369" key="GridCell.Tab.0.bottom" timestamp="1595828789820">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="369" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595828789820" />
+    <state width="1440" height="369" key="GridCell.Tab.0.center" timestamp="1595828789818">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="369" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595828789818" />
+    <state width="1440" height="369" key="GridCell.Tab.0.left" timestamp="1595828789818">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="369" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595828789818" />
+    <state width="1440" height="369" key="GridCell.Tab.0.right" timestamp="1595828789819">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="369" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595828789819" />
+    <state width="1440" height="369" key="GridCell.Tab.1.bottom" timestamp="1595828789821">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="369" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595828789821" />
+    <state width="1440" height="369" key="GridCell.Tab.1.center" timestamp="1595828789820">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="369" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1595828789820" />
+    <state width="1440" height="369" key="GridCell.Tab.1.left" timestamp="1595828789820">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="369" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1595828789820" />
+    <state width="1440" height="369" key="GridCell.Tab.1.right" timestamp="1595828789820">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="369" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1595828789820" />
+    <state x="464" y="177" key="RollbackChangesDialog" timestamp="1595812950318">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="464" y="177" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595812950318" />
+    <state x="228" y="63" key="SettingsEditor" timestamp="1595820138703">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="228" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1595820138703" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1595813067279">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1595813067279" />
+    <state x="521" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595813000261">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="521" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1595813000261" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1595740280333">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595740280333" />
+  </component>
+</project>

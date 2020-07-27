@@ -22,6 +22,8 @@ import java.util.Random;
 @Service
 public class UserService {
 
+
+
     @Autowired
     private LoginTicketMapper loginMapper;
 
@@ -144,7 +146,7 @@ public class UserService {
         }
 
         String password1 = CommunityUtil.md5(password + user.getSalt());
-        if (user.getPassword().equals(password1)) {
+        if (!user.getPassword().equals(password1)) {
             map.put("passwordMsg", "密码错误");
             return map;
         }
@@ -157,13 +159,42 @@ public class UserService {
         return map;
     }
 
-    public LoginTicket selectTicket(String ticket){
+
+    public Map<String, Object> updatePassword(int userId,String oldPassword, String newPassword) {
+
+        Map<String, Object> map = new HashMap<>();
+
+        if (oldPassword == null) {
+            map.put("oldPasswordMsg", "请输入原密码");
+            return map;
+        }
+
+        if (newPassword == null) {
+            map.put("newPasswordMsg", "新密码不能为空");
+            return map;
+        }
+
+        User user = userMapper.selectUserById(userId);
+
+        oldPassword = CommunityUtil.md5(oldPassword + user.getSalt());
+        newPassword=CommunityUtil.md5(newPassword+user.getSalt());
+
+        if (!oldPassword.equals(user.getPassword())) {
+            map.put("oldPasswordMsg", "原密码错误，请重新输入");
+            return map;
+        }
+        userMapper.updatePassword(user.getId(), newPassword);
+        return map;
+    }
+
+
+    public LoginTicket selectTicket(String ticket) {
         return loginMapper.selectTicket(ticket);
     }
 
 
-    public void logout(String ticket){
-        loginMapper.updateTicket(ticket,1);
+    public void logout(String ticket) {
+        loginMapper.updateTicket(ticket, 1);
     }
 
 
@@ -187,8 +218,5 @@ public class UserService {
         return userMapper.updateHeader(id, header);
     }
 
-    public int updatePassword(int id, String password) {
-        return userMapper.updatePassword(id, password);
-    }
 
 }
