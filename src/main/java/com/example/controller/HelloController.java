@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.util.CommunityUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,6 +45,14 @@ public class HelloController {
         System.out.println(session.getAttribute("id"));
         System.out.println(session.getAttribute("name"));
         return "hello world";
+    }
+
+    @PostMapping(path = "/ajax")
+    @ResponseBody
+    public String getAjax(String name, int age) {
+        System.out.println(name);
+        System.out.println(age);
+        return CommunityUtil.getJsonString(1, "我已经收到了");
     }
 
 

@@ -5,8 +5,13 @@
 
 
 <mapper namespace="com.example.dao.DiscussPostMapper">
+
 <sql id="discussPostSql">
     id,user_id,title,content,type,status,create_time,comment_count,score
+</sql>
+
+<sql id="discussPostInsertSql">
+    user_id,title,content,type,status,create_time,comment_count,score
 </sql>
 
 <select id="selectFields" resultType="DiscussPost" >
@@ -27,5 +32,19 @@
             and user_id=#{userId}
         </if>
     </select>
+
+
+    <insert id="insertDirection" parameterType="DiscussPost" keyProperty="id">
+        insert into discuss_post(<include refid="discussPostInsertSql"></include>) values (#{userId},#{title},#{content},
+        #{type},#{status},#{createTime},#{commentCount},#{score})
+    </insert>
+
+    <select id="findDiscussPostById" resultType="DiscussPost">
+        select <include refid="discussPostSql"></include> from  discuss_post where id=#{id}
+    </select>
+
+    <update id="updateSetCommentCountById" parameterType="_int">
+        update discuss_post  set comment_count=#{commentCount} =  where id=#{id};
+    </update>
 
 </mapper>

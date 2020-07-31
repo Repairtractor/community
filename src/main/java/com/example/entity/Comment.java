@@ -1,8 +1,8 @@
 package com.example.entity;
 
 
-import java.sql.Timestamp;
 import java.util.Date;
+
 
 public class Comment {
 
@@ -15,6 +15,19 @@ public class Comment {
   private int status;
   private Date createTime;
 
+  @Override
+  public String toString() {
+    return "Comment{" +
+            "id=" + id +
+            ", userId=" + userId +
+            ", entityType=" + entityType +
+            ", entityId=" + entityId +
+            ", targetId=" + targetId +
+            ", content='" + content + '\'' +
+            ", status=" + status +
+            ", createTime=" + createTime +
+            '}';
+  }
 
   public int getId() {
     return id;
@@ -83,7 +96,7 @@ public class Comment {
     return createTime;
   }
 
-  public void setCreateTime(Timestamp createTime) {
+  public void setCreateTime(Date createTime) {
     this.createTime = createTime;
   }
 

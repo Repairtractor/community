@@ -23,4 +23,10 @@ public interface DiscussPostMapper {
      *
      */
     int selectDirectionRows(@Param("userId")int userId);
+
+    int insertDirection(DiscussPost discussPost);
+
+    DiscussPost findDiscussPostById(int id);
+
+    int updateSetCommentCountById(int id,int commentCount);
 }

@@ -27,14 +27,12 @@ public class UserIntereceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //获取cookie中的ticket,并且查到user对象
         String ticket = CommunityUtil.getCookie(request, "ticket");
-        System.out.println(ticket);
 
         if (ticket != null) {
             LoginTicket loginTicket = userService.selectTicket(ticket);
             if (loginTicket != null && loginTicket.getStatus() == 0 && loginTicket.getExpired().after(new Date())) {
                 User user = userService.selectUserById(loginTicket.getUserId());
-                if (user != null)
-                    users.addUser(user);
+                if (user != null)users.addUser(user);
             }
         }
         return true;
@@ -49,7 +47,6 @@ public class UserIntereceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        if (users.getUser() != null)
-            users.remove();
+        if (users.getUser() != null) users.remove();
     }
 }

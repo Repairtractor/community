@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.annotation.LoginRequir;
 import com.example.entity.User;
 import com.example.service.UserService;
 import com.example.util.CommunityUtil;
@@ -44,6 +45,7 @@ public class UserController {
     @Autowired
     private UserThreadLocal users;
 
+    @LoginRequir
     @GetMapping("/setting")
     public String setting() {
         return "site/setting";
@@ -98,7 +100,6 @@ public class UserController {
 
         //设置响应给服务器的文件格式,这里文件格式就是图片的格式
         String suffix = fileName.substring(fileName.lastIndexOf("."));
-        System.out.println(suffix);
 
         response.setContentType("image/" + suffix);
 
