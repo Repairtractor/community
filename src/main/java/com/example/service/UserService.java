@@ -22,8 +22,6 @@ import java.util.Random;
 @Service
 public class UserService {
 
-
-
     @Autowired
     private LoginTicketMapper loginMapper;
 

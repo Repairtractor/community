@@ -20,10 +20,9 @@ public class LoginRequireInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (handler instanceof HandlerMethod) {
             HandlerMethod handler1 = (HandlerMethod) handler;
-            LoginRequir requir = handler1.getMethodAnnotation(LoginRequir.class);
-            if (requir != null && users.getUser() == null)
+            LoginRequir require = handler1.getMethodAnnotation(LoginRequir.class);
+            if (require != null && users.getUser() == null)
                 response.sendRedirect(request.getContextPath() + "/user/login");
-
         }
         return true;
     }

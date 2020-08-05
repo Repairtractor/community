@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/cc")
 public class HelloController {
 
     @RequestMapping(path = "/cookie", method = RequestMethod.GET)
@@ -53,6 +52,11 @@ public class HelloController {
         System.out.println(name);
         System.out.println(age);
         return CommunityUtil.getJsonString(1, "我已经收到了");
+    }
+
+    @GetMapping(path = "/error")
+    public String getErrorPage(){
+        return "error/500";
     }
 
 

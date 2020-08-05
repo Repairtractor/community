@@ -36,7 +36,6 @@ public class DisucssPostController {
         page.setRows(discus.selectDiscussPostRows(0));
         page.setPath("index");
 
-
         List<DiscussPost> fields = discus.selectFields(0, page.getOffset(), page.getLimit());
         List<Map<String, Object>> result = new ArrayList<>();
 
@@ -47,7 +46,6 @@ public class DisucssPostController {
             map.put("user", user);
             result.add(map);
         }
-        System.out.println("hello world");
         model.addAttribute("result", result);
 
         return "index";
@@ -64,6 +62,7 @@ public class DisucssPostController {
         discussPost.setContent(content);
         discussPost.setUserId(user.getId());
         discussPost.setCreateTime(new Date());
+
 
         discus.insertDiscussPost(discussPost);
         return CommunityUtil.getJsonString(0, "发布成功");

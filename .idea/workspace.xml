@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,69 +22,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7d52d7d-d55a-40d6-9562-3eca7fae69ef" name="默认的" comment="第三次提交，添加了登录功能，页面数据显示登录用户">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/DemoApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/DisucssPostController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/controller/LoginController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/dao/DiscussPostMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/dao/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Comment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/DiscussPost.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/Page.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/DiscussPostService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/util/CommunityConstant.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/util/CommunityConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/util/CommunityUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/util/MailClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/DiscussPostMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/discuss-detail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/letter.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/404.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/captcha.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/letter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/profile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mail/activation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mail/forget.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/admin/data.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/discuss-detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/error/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/followee.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/follower.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/forget.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/letter-detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/letter.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/my-post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/my-reply.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/notice-detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/notice.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/operate-result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/site/setting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/DemoApplicationTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/dao/DiscussPostMapperTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/example/dao/UserMapperTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/LoginController.java" afterDir="false" />
+    <list default="true" id="c7d52d7d-d55a-40d6-9562-3eca7fae69ef" name="默认的" comment="第四次提交，添加了显示帖子评论 回复，增加帖子评论功能">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/aspect/ServiceLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/handleException/HandleException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dao/MessageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entity/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/MessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/message-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dao/HelloServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dao/MessageMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/dao/SensitiveRecviewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/WebMVcInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/config/WebMVcInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/DisucssPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/DisucssPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/interceptor/LoginRequireInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/interceptor/LoginRequireInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/letter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/letter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/site/setting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/letter-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/site/letter-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/letter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/site/letter.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,13 +66,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="AnnotationType" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -134,6 +101,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -142,19 +110,36 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates/site" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.DemoApplication">
+    <configuration name="HelloServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="community" />
+      <option name="PACKAGE_NAME" value="com.example.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.example.dao.HelloServiceTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginMapperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="community" />
       <extension name="coverage">
@@ -187,33 +172,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMapperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MessageMapperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="community" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="com.example.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.example.dao.UserMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.dao.MessageMapperTest" />
       <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMapperTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SensitiveRecviewTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="community" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="com.example.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.example.dao.UserMapperTest" />
-      <option name="METHOD_NAME" value="test3" />
+      <option name="MAIN_CLASS_NAME" value="com.example.dao.SensitiveRecviewTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -230,21 +203,24 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserMapperTest.test" />
-      <item itemvalue="JUnit.UserMapperTest.test3" />
-      <item itemvalue="JUnit.LoginMapperTest.test" />
+      <item itemvalue="JUnit.HelloServiceTest.test" />
       <item itemvalue="JUnit.LoginMapperTest.test1" />
+      <item itemvalue="JUnit.LoginMapperTest.test" />
+      <item itemvalue="JUnit.SensitiveRecviewTest.test" />
+      <item itemvalue="JUnit.MessageMapperTest.test" />
       <item itemvalue="Spring Boot.DemoApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoginMapperTest.test1" />
+        <item itemvalue="JUnit.MessageMapperTest.test" />
+        <item itemvalue="JUnit.SensitiveRecviewTest.test" />
         <item itemvalue="JUnit.LoginMapperTest.test" />
-        <item itemvalue="JUnit.UserMapperTest.test3" />
-        <item itemvalue="JUnit.UserMapperTest.test" />
+        <item itemvalue="JUnit.LoginMapperTest.test1" />
+        <item itemvalue="JUnit.HelloServiceTest.test" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -267,7 +243,27 @@
       <workItem from="1595774026841" duration="616000" />
       <workItem from="1595774648914" duration="206000" />
       <workItem from="1595812443267" duration="28000" />
-      <workItem from="1595812571115" duration="12137000" />
+      <workItem from="1595812571115" duration="22237000" />
+      <workItem from="1595926228425" duration="420000" />
+      <workItem from="1595926669493" duration="325000" />
+      <workItem from="1595927010633" duration="1036000" />
+      <workItem from="1596069726750" duration="104000" />
+      <workItem from="1596069887471" duration="8182000" />
+      <workItem from="1596091682744" duration="14265000" />
+      <workItem from="1596115202003" duration="215000" />
+      <workItem from="1596115445202" duration="560000" />
+      <workItem from="1596117560775" duration="151000" />
+      <workItem from="1596117841664" duration="18828000" />
+      <workItem from="1596203814860" duration="588000" />
+      <workItem from="1596249753939" duration="102000" />
+      <workItem from="1596249876033" duration="2805000" />
+      <workItem from="1596349065622" duration="109000" />
+      <workItem from="1596349188304" duration="10856000" />
+      <workItem from="1596372133686" duration="2714000" />
+      <workItem from="1596421087829" duration="1659000" />
+      <workItem from="1596434439683" duration="980000" />
+      <workItem from="1596438180417" duration="96000" />
+      <workItem from="1596438295758" duration="9111000" />
     </task>
     <task id="LOCAL-00001" summary="第二次提交，添加了注册功能">
       <created>1595662496068</created>
@@ -290,11 +286,25 @@
       <option name="project" value="LOCAL" />
       <updated>1595812982439</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="第四次提交，添加了用户设置 密码修改，文件上传，文件获取">
+      <created>1595830908790</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595830908790</updated>
+    </task>
+    <task id="LOCAL-00005" summary="第四次提交，添加了显示帖子评论 回复，增加帖子评论功能">
+      <created>1596183358937</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596183358937</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -312,7 +322,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="第二次提交，添加了注册功能" />
     <MESSAGE value="第三次提交，添加了登录功能，页面数据显示登录用户" />
-    <option name="LAST_COMMIT_MESSAGE" value="第三次提交，添加了登录功能，页面数据显示登录用户" />
+    <MESSAGE value="第四次提交，添加了用户设置 密码修改，文件上传，文件获取" />
+    <MESSAGE value="第四次提交，添加了显示帖子评论 回复，增加帖子评论功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="第四次提交，添加了显示帖子评论 回复，增加帖子评论功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="597" y="320" key="#Notifications" timestamp="1595774488698">
@@ -323,81 +335,143 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="540" y="235" key="#Web浏览器/0.0.1440.900@0.0.1440.900" timestamp="1595643887141" />
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595730461225">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="222" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596090797855">
+      <screen x="43" y="0" width="1397" height="900" />
     </state>
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595730461225" />
+    <state x="222" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/43.0.1397.900@43.0.1397.900" timestamp="1596090797855" />
     <state x="556" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595774617192">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="556" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1595774617192" />
-    <state x="467" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1595819821520">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="496" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1596354828892">
+      <screen x="43" y="0" width="1397" height="900" />
     </state>
-    <state x="467" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1595819821520" />
+    <state x="467" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1595832416954" />
+    <state x="496" y="158" key="#com.intellij.ide.util.MemberChooser/43.0.1397.900@43.0.1397.900" timestamp="1596354828892" />
+    <state x="497" y="158" key="#com.intellij.ide.util.MemberChooser/44.0.1396.900@44.0.1396.900" timestamp="1596190209511" />
+    <state x="497" y="158" key="#com.intellij.ide.util.MemberChooser/45.0.1395.900@45.0.1395.900" timestamp="1595926384772" />
+    <state x="430" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596069746888">
+      <screen x="42" y="0" width="1398" height="900" />
+    </state>
+    <state x="430" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/42.0.1398.900@42.0.1398.900" timestamp="1596069746888" />
     <state x="458" y="204" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1595752117844">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595752117844" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1595813014580">
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1595830951738">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1595813014580" />
-    <state x="593" y="354" key="Github.ShareDialog" timestamp="1595774441854">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1595830951738" />
+    <state x="619" y="354" key="Github.ShareDialog" timestamp="1596183628221">
+      <screen x="45" y="0" width="1395" height="900" />
     </state>
     <state x="593" y="354" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1595774441854" />
-    <state width="1440" height="369" key="GridCell.Tab.0.bottom" timestamp="1595828789820">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="619" y="354" key="Github.ShareDialog/45.0.1395.900@45.0.1395.900" timestamp="1596183628221" />
+    <state width="1396" height="331" key="GridCell.Tab.0.bottom" timestamp="1596452586520">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state width="1440" height="369" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595828789820" />
-    <state width="1440" height="369" key="GridCell.Tab.0.center" timestamp="1595828789818">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1280" height="314" key="GridCell.Tab.0.bottom/43.0.1397.900@43.0.1397.900" timestamp="1596362855604" />
+    <state width="1396" height="331" key="GridCell.Tab.0.bottom/44.0.1396.900@44.0.1396.900" timestamp="1596452586520" />
+    <state width="1315" height="257" key="GridCell.Tab.0.bottom/45.0.1395.900@45.0.1395.900" timestamp="1596183157500" />
+    <state width="1396" height="331" key="GridCell.Tab.0.center" timestamp="1596452586519">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state width="1440" height="369" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595828789818" />
-    <state width="1440" height="369" key="GridCell.Tab.0.left" timestamp="1595828789818">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1280" height="314" key="GridCell.Tab.0.center/43.0.1397.900@43.0.1397.900" timestamp="1596362855602" />
+    <state width="1396" height="331" key="GridCell.Tab.0.center/44.0.1396.900@44.0.1396.900" timestamp="1596452586519" />
+    <state width="1315" height="257" key="GridCell.Tab.0.center/45.0.1395.900@45.0.1395.900" timestamp="1596183157500" />
+    <state width="1396" height="331" key="GridCell.Tab.0.left" timestamp="1596452586518">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state width="1440" height="369" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595828789818" />
-    <state width="1440" height="369" key="GridCell.Tab.0.right" timestamp="1595828789819">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1280" height="314" key="GridCell.Tab.0.left/43.0.1397.900@43.0.1397.900" timestamp="1596362855602" />
+    <state width="1396" height="331" key="GridCell.Tab.0.left/44.0.1396.900@44.0.1396.900" timestamp="1596452586518" />
+    <state width="1315" height="257" key="GridCell.Tab.0.left/45.0.1395.900@45.0.1395.900" timestamp="1596183157499" />
+    <state width="1396" height="331" key="GridCell.Tab.0.right" timestamp="1596452586519">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state width="1440" height="369" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595828789819" />
-    <state width="1440" height="369" key="GridCell.Tab.1.bottom" timestamp="1595828789821">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1280" height="314" key="GridCell.Tab.0.right/43.0.1397.900@43.0.1397.900" timestamp="1596362855603" />
+    <state width="1396" height="331" key="GridCell.Tab.0.right/44.0.1396.900@44.0.1396.900" timestamp="1596452586519" />
+    <state width="1315" height="257" key="GridCell.Tab.0.right/45.0.1395.900@45.0.1395.900" timestamp="1596183157500" />
+    <state width="1396" height="331" key="GridCell.Tab.1.bottom" timestamp="1596452586521">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state width="1440" height="369" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595828789821" />
-    <state width="1440" height="369" key="GridCell.Tab.1.center" timestamp="1595828789820">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1280" height="314" key="GridCell.Tab.1.bottom/43.0.1397.900@43.0.1397.900" timestamp="1596362855606" />
+    <state width="1396" height="331" key="GridCell.Tab.1.bottom/44.0.1396.900@44.0.1396.900" timestamp="1596452586521" />
+    <state width="1315" height="257" key="GridCell.Tab.1.bottom/45.0.1395.900@45.0.1395.900" timestamp="1596183157501" />
+    <state width="1396" height="331" key="GridCell.Tab.1.center" timestamp="1596452586520">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state width="1440" height="369" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1595828789820" />
-    <state width="1440" height="369" key="GridCell.Tab.1.left" timestamp="1595828789820">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1280" height="314" key="GridCell.Tab.1.center/43.0.1397.900@43.0.1397.900" timestamp="1596362855605" />
+    <state width="1396" height="331" key="GridCell.Tab.1.center/44.0.1396.900@44.0.1396.900" timestamp="1596452586520" />
+    <state width="1315" height="257" key="GridCell.Tab.1.center/45.0.1395.900@45.0.1395.900" timestamp="1596183157500" />
+    <state width="1396" height="331" key="GridCell.Tab.1.left" timestamp="1596452586520">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state width="1440" height="369" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1595828789820" />
-    <state width="1440" height="369" key="GridCell.Tab.1.right" timestamp="1595828789820">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1280" height="314" key="GridCell.Tab.1.left/43.0.1397.900@43.0.1397.900" timestamp="1596362855605" />
+    <state width="1396" height="331" key="GridCell.Tab.1.left/44.0.1396.900@44.0.1396.900" timestamp="1596452586520" />
+    <state width="1315" height="257" key="GridCell.Tab.1.left/45.0.1395.900@45.0.1395.900" timestamp="1596183157500" />
+    <state width="1396" height="331" key="GridCell.Tab.1.right" timestamp="1596452586520">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state width="1440" height="369" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1595828789820" />
+    <state width="1280" height="314" key="GridCell.Tab.1.right/43.0.1397.900@43.0.1397.900" timestamp="1596362855606" />
+    <state width="1396" height="331" key="GridCell.Tab.1.right/44.0.1396.900@44.0.1396.900" timestamp="1596452586520" />
+    <state width="1315" height="257" key="GridCell.Tab.1.right/45.0.1395.900@45.0.1395.900" timestamp="1596183157500" />
+    <state x="280" y="123" key="Maven.ArtifactSearchDialog" timestamp="1596448867229">
+      <screen x="44" y="0" width="1396" height="900" />
+    </state>
+    <state x="280" y="123" key="Maven.ArtifactSearchDialog/44.0.1396.900@44.0.1396.900" timestamp="1596448867229" />
     <state x="464" y="177" key="RollbackChangesDialog" timestamp="1595812950318">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="464" y="177" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1595812950318" />
-    <state x="228" y="63" key="SettingsEditor" timestamp="1595820138703">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="188" y="114" key="SettingsEditor" timestamp="1596444801606">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state x="228" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1595820138703" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1595813067279">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="308" y="45" key="SettingsEditor/42.0.1398.900@42.0.1398.900" timestamp="1596070010794" />
+    <state x="187" y="114" key="SettingsEditor/43.0.1397.900@43.0.1397.900" timestamp="1596249839346" />
+    <state x="188" y="114" key="SettingsEditor/44.0.1396.900@44.0.1396.900" timestamp="1596444801606" />
+    <state x="310" y="45" key="SettingsEditor/45.0.1395.900@45.0.1395.900" timestamp="1596183596422" />
+    <state x="214" y="133" key="SettingsEditor/45.0.1635.1050@45.0.1635.1050" timestamp="1596265672198" />
+    <state x="355" y="190" key="Vcs.Push.Dialog.v2" timestamp="1596183685772">
+      <screen x="45" y="0" width="1395" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1595813067279" />
-    <state x="521" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595813000261">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1595830955471" />
+    <state x="355" y="190" key="Vcs.Push.Dialog.v2/45.0.1395.900@45.0.1395.900" timestamp="1596183685772" />
+    <state x="529" y="235" key="chooseDestDirectoryDialog" timestamp="1596091009228">
+      <screen x="43" y="0" width="1397" height="900" />
     </state>
-    <state x="521" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1595813000261" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1595740280333">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="529" y="235" key="chooseDestDirectoryDialog/43.0.1397.900@43.0.1397.900" timestamp="1596091009228" />
+    <state x="550" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596183376450">
+      <screen x="45" y="0" width="1395" height="900" />
+    </state>
+    <state x="521" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1595830921725" />
+    <state x="550" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/45.0.1395.900@45.0.1395.900" timestamp="1596183376450" />
+    <state x="480" y="205" key="extract.method.dialog" timestamp="1596130282791">
+      <screen x="45" y="0" width="1395" height="900" />
+    </state>
+    <state x="480" y="205" key="extract.method.dialog/45.0.1395.900@45.0.1395.900" timestamp="1596130282791" />
+    <state x="453" y="92" width="580" height="735" key="find.popup" timestamp="1596177066190">
+      <screen x="45" y="0" width="1395" height="900" />
+    </state>
+    <state x="453" y="92" width="580" height="735" key="find.popup/45.0.1395.900@45.0.1395.900" timestamp="1596177066190" />
+    <state x="396" y="82" key="new project wizard" timestamp="1596386557698">
+      <screen x="44" y="0" width="1396" height="900" />
+    </state>
+    <state x="396" y="82" key="new project wizard/44.0.1396.900@44.0.1396.900" timestamp="1596386557698" />
+    <state x="417" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1596439233969">
+      <screen x="44" y="0" width="1396" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1595740280333" />
+    <state x="417" y="196" width="670" height="676" key="search.everywhere.popup/44.0.1396.900@44.0.1396.900" timestamp="1596439233969" />
+    <state x="418" y="196" width="670" height="676" key="search.everywhere.popup/45.0.1395.900@45.0.1395.900" timestamp="1596177975068" />
   </component>
 </project>

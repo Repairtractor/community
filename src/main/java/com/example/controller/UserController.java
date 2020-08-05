@@ -60,6 +60,7 @@ public class UserController {
 
         //获得文件的后缀，进行名称的拼接
         String filename = headerImage.getOriginalFilename();
+        assert filename != null;
         String suffix = filename.substring(filename.lastIndexOf("."));
 
         if (StringUtils.isBlank(suffix)) {
