@@ -32,6 +32,10 @@ public class ServiceLogAspect {
 
         //获取ip地址
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+
+        //这里因为消费者自动调用service，并不是通过controller，所以取不到ip，可能为空
+        if (attributes==null)return;
+
         HttpServletRequest servletRequest = attributes.getRequest();
         String host = servletRequest.getRemoteHost();
 

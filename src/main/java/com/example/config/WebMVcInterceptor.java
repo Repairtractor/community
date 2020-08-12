@@ -1,6 +1,7 @@
 package com.example.config;
 
 import com.example.controller.interceptor.LoginRequireInterceptor;
+import com.example.controller.interceptor.MessageInterceptor;
 import com.example.controller.interceptor.UserIntereceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -17,9 +18,13 @@ public class WebMVcInterceptor implements WebMvcConfigurer {
     @Autowired
     private LoginRequireInterceptor requireInterceptor;
 
+    @Autowired
+    private MessageInterceptor messageInterceptor;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(userInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.html");
         registry.addInterceptor(requireInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.html");
+        registry.addInterceptor(messageInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.html");
     }
 }

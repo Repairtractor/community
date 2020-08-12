@@ -15,7 +15,7 @@
 
     <select id="getComments" resultType="Comment">
         select <include refid="selectSql"></include> from comment where entity_type=#{entityType} and status=0 and
-        entity_id=#{entityId} order by create_time asc limit #{offset },#{limit}
+        entity_id=#{entityId} order by create_time desc limit #{offset },#{limit}
     </select>
 
     <select id="getCommentRows" resultType="_int">
@@ -29,7 +29,7 @@
         )values (#{userId},#{entityType},#{entityId},#{targetId},#{content},#{status},#{createTime})
     </insert>
 
-    <select id="getCommentById">
+    <select id="getCommentById" resultType="Comment">
         select <include refid="selectSql"> </include> from comment where id=#{id}
     </select>
 

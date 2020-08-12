@@ -6,6 +6,7 @@ import com.example.entity.Page;
 import com.example.entity.User;
 import com.example.service.CommentService;
 import com.example.service.DiscussPostService;
+import com.example.service.LikeService;
 import com.example.service.UserService;
 import com.example.util.CommunityConstant;
 import com.example.util.CommunityUtil;
@@ -31,6 +32,10 @@ public class DisucssPostController {
     @Autowired
     private UserThreadLocal users;
 
+    @Autowired
+    private LikeService likeService;
+
+
     @RequestMapping(path = "/index", method = RequestMethod.GET)
     public String getDiscussPost(Model model, Page page) {
         page.setRows(discus.selectDiscussPostRows(0));
@@ -42,6 +47,11 @@ public class DisucssPostController {
         for (DiscussPost post : fields) {
             User user = userService.selectUserById(post.getUserId());
             Map<String, Object> map = new HashMap<>();
+
+            //点赞数量
+            int likeCount = likeService.getLikeCount(CommunityConstant.POST_COMMENT, post.getId());
+            map.put("likeCount", likeCount);
+
             map.put("post", post);
             map.put("user", user);
             result.add(map);
@@ -86,7 +96,12 @@ public class DisucssPostController {
         List<Comment> comments = commentService.getComments(CommunityConstant.POST_COMMENT, post.getId(), page.getOffset(), page.getLimit());
 
 
-        //页面需要显示的对象集合
+        //获取点赞数量
+        int likeCount = likeService.getLikeCount(CommunityConstant.POST_COMMENT, id);
+        int likeStatus = likeService.getLikeStatus(user.getId(), CommunityConstant.POST_COMMENT, post.getId());
+
+
+        //要显示的对象集合
         List<Map<String, Object>> commentVoList = new ArrayList<>();
 
         if (comments != null) {
@@ -95,6 +110,14 @@ public class DisucssPostController {
                 Map<String, Object> commentVo = new HashMap<>();
                 commentVo.put("comment", comment);
                 commentVo.put("user", userService.selectUserById(comment.getUserId()));
+
+
+                //获取点赞数量
+                int commentLikeCount = likeService.getLikeCount(CommunityConstant.POST_COMMENT, comment.getId());
+                int commentLikeStatus = likeService.getLikeStatus(user.getId(), CommunityConstant.POST_COMMENT, comment.getId());
+                commentVo.put("likeCount",commentLikeCount);
+                commentVo.put("likeStatus",commentLikeStatus);
+
 
                 //每个评论的回复
                 List<Comment> replays = commentService.getComments(CommunityConstant.REPLY_COMMENT, comment.getId(), 0, Integer.MAX_VALUE);
@@ -105,9 +128,16 @@ public class DisucssPostController {
                     for (Comment replay : replays) {
                         Map<String, Object> replayVo = new HashMap<>();
                         replayVo.put("replay", replay);
-                        replayVo.put("user",userService.selectUserById(replay.getUserId()));
+                        replayVo.put("user", userService.selectUserById(replay.getUserId()));
                         User target = replay.getTargetId() == 0 ? null : userService.selectUserById(replay.getTargetId());
                         replayVo.put("target", target);
+
+
+                        //获取点赞数量
+                        int replayLikeCount = likeService.getLikeCount(CommunityConstant.REPLY_COMMENT, replay.getId());
+                        int replayLikeStatus = likeService.getLikeStatus(user.getId(), CommunityConstant.REPLY_COMMENT, replay.getId());
+                        replayVo.put("likeCount",replayLikeCount);
+                        replayVo.put("likeStatus",replayLikeStatus);
 
                         replayVoList.add(replayVo);
                     }
@@ -121,6 +151,10 @@ public class DisucssPostController {
                 commentVoList.add(commentVo);
             }
             model.addAttribute("comments", commentVoList);
+
+            //添加post.id的点赞数
+            model.addAttribute("likeCount",likeCount);
+            model.addAttribute("likeStatus",likeStatus);
         }
 
 

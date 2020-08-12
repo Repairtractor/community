@@ -40,12 +40,16 @@ public class CommentService {
         comment.setContent(sensitiveString);
 
         int num = commentMapper.insertComment(comment);
-        if (comment.getEntityType()== CommunityConstant.POST_COMMENT) {
+        if (comment.getEntityType() == CommunityConstant.POST_COMMENT) {
             int rows = commentMapper.getCommentRows(comment.getEntityType(), comment.getEntityId());
             discussPostService.updateSetCommentCountById(comment.getEntityId(), rows);
         }
 
         return num;
+    }
+
+    public Comment getCommentById(int id) {
+        return commentMapper.getCommentById(id);
     }
 
 }

@@ -1,7 +1,12 @@
 package com.example.controller;
 
 import com.example.entity.Comment;
+import com.example.entity.DiscussPost;
+import com.example.entity.Event;
+import com.example.event.EventProducer;
 import com.example.service.CommentService;
+import com.example.service.DiscussPostService;
+import com.example.util.CommunityConstant;
 import com.example.util.UserThreadLocal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,22 +18,47 @@ import java.util.Date;
 
 @Controller
 @RequestMapping("/comment")
-public class CommentController {
+public class CommentController  {
 
     @Autowired
     private CommentService commentService;
 
     @Autowired
+    private DiscussPostService discussPostService;
+
+    @Autowired
     private UserThreadLocal users;
 
-    @PostMapping("/add/{id}")
-    public String add(@PathVariable("id") int id, Comment comment) {
-        System.out.println(comment.toString());
+    @Autowired
+    private EventProducer eventProducer;
+
+    @PostMapping("/add/{discussId}")
+    public String add(@PathVariable("discussId") int discussId, Comment comment) {
         comment.setUserId(users.getUser().getId());
         comment.setStatus(0);
         comment.setCreateTime(new Date());
         commentService.addComment(comment);
-        return "redirect:/getPost/" + id;
+
+        //添加事件
+        Event event = new Event()
+                .setUserId(users.getUser().getId())
+                .setEntityType(comment.getEntityType())
+                .setEntityId(comment.getEntityId())
+                .setTopic(CommunityConstant.TOPIC_TYPE_COMMENT).setData("postId",discussId);
+        //找到实体的主人
+        if (comment.getEntityType()==CommunityConstant.POST_COMMENT){
+            //如果评论的是一个帖子
+            DiscussPost post = discussPostService.getDiscussPostById(discussId);
+            event.setEntityUserId(post.getUserId());
+        }else if (comment.getEntityType()==CommunityConstant.REPLY_COMMENT){
+            //如果是评论的评论，就通过评论的评论id找到我评论的那个目标
+            Comment com = commentService.getCommentById(comment.getEntityId());
+            event.setEntityUserId(com.getUserId());
+        }
+
+        eventProducer.send(event);
+
+        return "redirect:/getPost/" + discussId;
     }
 
 }

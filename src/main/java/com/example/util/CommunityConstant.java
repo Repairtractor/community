@@ -33,4 +33,19 @@ public interface CommunityConstant {
     int POST_COMMENT=1;
 
     int REPLY_COMMENT=2;
+
+    int USER_COMMENT=3;
+
+    /**
+     * 事件/消息的类型主题
+     */
+    String TOPIC_TYPE_LIKE="like";
+    String TOPIC_TYPE_COMMENT="comment";
+    String TOPIC_TYPE_FOLLOW="follow";
+
+    /**
+     * 系统发送消息人
+     */
+    int SYSTEM_SEND_MESSAGE_MAN =1;
+
 }

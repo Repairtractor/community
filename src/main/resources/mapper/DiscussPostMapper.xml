@@ -44,7 +44,7 @@
     </select>
 
     <update id="updateSetCommentCountById" parameterType="_int">
-        update discuss_post  set comment_count=#{commentCount} =  where id=#{id};
+        update discuss_post  set comment_count=#{commentCount}  where id=#{id};
     </update>
 
 </mapper>

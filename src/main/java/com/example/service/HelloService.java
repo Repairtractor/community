@@ -47,7 +47,6 @@ public class HelloService {
         discussPost.setCreateTime(new Date());
         discussPostMapper.insertDirection(discussPost);
 
-        Integer.valueOf("abc");
         return "ok";
     }
 

@@ -1,17 +1,17 @@
 package com.example.dao;
 
-import com.example.entity.DiscussPost;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 @SpringBootTest
 public class DiscussPostMapperTest {
 
     @Autowired
     private DiscussPostMapper discus;
+
+    @Autowired
+    private MessageMapper messageMapper;
 
     @Test
     public void test() {
@@ -22,6 +22,11 @@ public class DiscussPostMapperTest {
         System.out.println(discus.selectDirectionRows(149));
 
 
+    }
+
+    @Test
+    public void test2(){
+        messageMapper.selectAllMessage(111,"comment",0,5).forEach(System.out::println);
     }
 
 }

@@ -43,4 +43,24 @@ public class MessageService {
     public int selectLetterUnReadCount(int userId, String conversationId) {
         return messageMapper.selectLetterUnReadCount(userId, conversationId);
     }
+
+    public Message selectLatestMessage(int userId,String topic){
+        return messageMapper.selectLatestMessage(userId, topic);
+    }
+
+    //查询每个主题所包含的通知数量
+   public int selectMessageCount(int userId,String topic){
+        return messageMapper.selectMessageCount(userId, topic);
+   }
+
+    //查询未读的数量
+   public int selectUnReadCount(int userId, String topic){
+        return messageMapper.selectUnReadCount(userId, topic);
+   }
+
+    //查询消息详情
+   public List<Message> selectAllMessage(int userId,String topic,int offset,int limit){
+        return messageMapper.selectAllMessage(userId, topic, offset, limit);
+   }
+
 }

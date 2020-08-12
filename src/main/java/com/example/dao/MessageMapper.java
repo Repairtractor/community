@@ -2,6 +2,7 @@ package com.example.dao;
 
 import com.example.entity.Message;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -26,5 +27,17 @@ public interface MessageMapper {
     int insertMessage(Message message);
 
     int updateMessageStatus(List<Integer> ids,int status);
+
+    //查询某个用户，某个主题最新的消息
+    Message selectLatestMessage(int userId,String topic);
+
+    //查询每个主题所包含的通知数量
+    int selectMessageCount(int userId,String topic);
+
+    //查询未读的数量
+    int selectUnReadCount(int userId, @Param("topic") String topic);
+
+    //查询消息详情
+    List<Message> selectAllMessage(int userId,String topic,int offset,int limit);
 
 }

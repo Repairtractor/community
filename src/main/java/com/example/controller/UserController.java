@@ -2,7 +2,10 @@ package com.example.controller;
 
 import com.example.annotation.LoginRequir;
 import com.example.entity.User;
+import com.example.service.FollowService;
+import com.example.service.LikeService;
 import com.example.service.UserService;
+import com.example.util.CommunityConstant;
 import com.example.util.CommunityUtil;
 import com.example.util.UserThreadLocal;
 import org.apache.commons.lang3.StringUtils;
@@ -30,6 +33,9 @@ public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
+    private FollowService followService;
+
+    @Autowired
     private UserService userService;
 
     @Value("${community.path.domain}")
@@ -41,6 +47,8 @@ public class UserController {
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
+    @Autowired
+    private LikeService likeService;
 
     @Autowired
     private UserThreadLocal users;
@@ -140,6 +148,35 @@ public class UserController {
 
 
     }
+
+    @GetMapping("/profile/{userId}")
+    public String profile(@PathVariable("userId") int userId, Model model) {
+        User user = users.getUser();
+        if (user == null) throw new IllegalArgumentException("用户不存在");
+        model.addAttribute("targetUser", userService.selectUserById(userId));
+
+        int likeCount = likeService.likeCount(userId);
+        model.addAttribute("likeCount", likeCount);
+
+        //个人主页携带的关注数据
+        //查询某个用户关注的数量
+        long followCount = followService.followCount(userId, CommunityConstant.USER_COMMENT);
+        model.addAttribute("followCount", followCount);
+
+        //查询某个实体的粉丝数
+        long followerCount = followService.followerCount(userId,CommunityConstant.USER_COMMENT);
+        model.addAttribute("followerCount", followerCount);
+
+        boolean isFollow = false;
+        if (user != null)
+            isFollow = followService.isFollow(user.getId(), CommunityConstant.USER_COMMENT, userId);
+
+        model.addAttribute("isFollow", isFollow);
+
+
+        return "site/profile";
+    }
+
 }
 
 

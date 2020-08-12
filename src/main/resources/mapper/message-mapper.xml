@@ -79,8 +79,35 @@
         </foreach>
     </update>
 
+    <!--这里为什么是in-->
+    <select id="selectLatestMessage" resultType="Message">
+        select <include refid="selectFields"></include> from message
+        where id in (
+            select max(id) from message
+            where from_id=1 and status!=2
+            and to_id=#{userId} and conversation_id=#{topic}
+        )
+    </select>
 
+    <select id="selectMessageCount" resultType="_int">
+        select count(id)from message
+        where from_id=1 and status!=2 and to_id=#{userId} and conversation_id=#{topic}
+    </select>
 
+    <select id="selectUnReadCount" resultType="_int">
+        select count(id) from message
+        where from_id=1 and status=0 and to_id=#{userId}
+        <if test="topic!=null">
+            and conversation_id=#{topic}
+        </if>
+    </select>
+
+    <select id="selectAllMessage" resultType="Message">
+        select <include refid="selectFields"></include> from message
+        where from_id=1 and status!=2 and to_id=#{userId} and conversation_id=#{topic}
+        order by create_time desc
+        limit #{offset },#{limit}
+    </select>
 
 
 

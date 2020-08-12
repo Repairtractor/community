@@ -42,7 +42,7 @@ public class UserIntereceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         User user = users.getUser();
         if (user != null && modelAndView != null)
-            modelAndView.addObject("user", user);
+            modelAndView.addObject("loginUser", user);
     }
 
     @Override
