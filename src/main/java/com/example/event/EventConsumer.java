@@ -1,8 +1,11 @@
 package com.example.event;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.dao.DiscussPostMapper;
+import com.example.entity.DiscussPost;
 import com.example.entity.Event;
 import com.example.entity.Message;
+import com.example.service.ElasticSearchService;
 import com.example.service.MessageService;
 import com.example.util.CommunityConstant;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -26,6 +29,12 @@ public class EventConsumer implements CommunityConstant {
 
     @Autowired
     private MessageService messageService;
+
+    @Autowired
+    private ElasticSearchService EsService;
+
+    @Autowired
+    private DiscussPostMapper discussPostMapper;
 
     @KafkaListener(topics = {TOPIC_TYPE_LIKE, TOPIC_TYPE_COMMENT, TOPIC_TYPE_FOLLOW})
     public void handleCommentMessage(ConsumerRecord<String, String> consumerRecord) {
@@ -63,6 +72,27 @@ public class EventConsumer implements CommunityConstant {
         message.setContent(JSONObject.toJSONString(map));
         messageService.insertMessage(message);
 
+    }
+
+    @KafkaListener(topics = {TOPIC_TYPE_POST})
+    public void handlePostMessage(ConsumerRecord<String, String> consumerRecord) {
+
+        if (consumerRecord == null || consumerRecord.value() == null) {
+            logger.error("消息错误");
+            return;
+        }
+
+        //接收收到的消息，转成对象，这里注意转换方法
+        Event event =  JSONObject.parseObject(consumerRecord.value().toString(),Event.class);
+        if (event == null) {
+            logger.error("消息格式不正确");
+            return;
+        }
+
+        int entityId = event.getEntityId();
+        DiscussPost post = discussPostMapper.findDiscussPostById(entityId);
+
+        EsService.insertEsPost(post);
     }
 
 

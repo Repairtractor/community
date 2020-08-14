@@ -58,6 +58,18 @@ public class CommentController  {
 
         eventProducer.send(event);
 
+
+        //有人评论，如果是回帖的话，需要修改回帖的数量，所以触发事件
+        if (comment.getEntityType() ==CommunityConstant.POST_COMMENT){
+            event=new Event().setUserId(users.getUser().getId())
+                    .setEntityId(discussId).setEntityType(CommunityConstant.POST_COMMENT)
+                    .setTopic(CommunityConstant.TOPIC_TYPE_POST);
+            eventProducer.send(event);
+        }
+
+
+
+
         return "redirect:/getPost/" + discussId;
     }
 

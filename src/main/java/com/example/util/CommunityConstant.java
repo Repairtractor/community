@@ -37,11 +37,12 @@ public interface CommunityConstant {
     int USER_COMMENT=3;
 
     /**
-     * 事件/消息的类型主题
+     * 事件/消息的类型主题  kafka
      */
     String TOPIC_TYPE_LIKE="like";
     String TOPIC_TYPE_COMMENT="comment";
     String TOPIC_TYPE_FOLLOW="follow";
+    String TOPIC_TYPE_POST="post";
 
     /**
      * 系统发送消息人

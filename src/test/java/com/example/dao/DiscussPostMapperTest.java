@@ -1,5 +1,6 @@
 package com.example.dao;
 
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +14,8 @@ public class DiscussPostMapperTest {
     @Autowired
     private MessageMapper messageMapper;
 
+
+
     @Test
     public void test() {
         discus.selectFields(0, 0, 10).forEach(System.out::println);
@@ -22,6 +25,11 @@ public class DiscussPostMapperTest {
         System.out.println(discus.selectDirectionRows(149));
 
 
+    }
+
+    @Test
+    public void test3(){
+        System.out.println("heoolworld");
     }
 
     @Test

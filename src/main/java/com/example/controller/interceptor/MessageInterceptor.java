@@ -21,7 +21,7 @@ public class MessageInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        if (users.getUser() != null && !modelAndView.isEmpty()) {
+        if (users.getUser() != null && modelAndView!=null) {
             int letterUnReadCount = messageService.selectLetterUnReadCount(users.getUser().getId(), null);
             int count = messageService.selectUnReadCount(users.getUser().getId(), null);
             modelAndView.addObject("allUnReadCount", letterUnReadCount + count);

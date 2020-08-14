@@ -1,9 +1,7 @@
 package com.example.controller;
 
-import com.example.entity.Comment;
-import com.example.entity.DiscussPost;
-import com.example.entity.Page;
-import com.example.entity.User;
+import com.example.entity.*;
+import com.example.event.EventProducer;
 import com.example.service.CommentService;
 import com.example.service.DiscussPostService;
 import com.example.service.LikeService;
@@ -34,6 +32,9 @@ public class DisucssPostController {
 
     @Autowired
     private LikeService likeService;
+
+    @Autowired
+    private EventProducer producer;
 
 
     @RequestMapping(path = "/index", method = RequestMethod.GET)
@@ -75,6 +76,14 @@ public class DisucssPostController {
 
 
         discus.insertDiscussPost(discussPost);
+
+        //把消息放进elasticsearch中，利用kafka消息队列异步发送
+        Event event=new Event().setTopic(CommunityConstant.TOPIC_TYPE_POST)
+                .setUserId(user.getId()).setEntityType(CommunityConstant.POST_COMMENT)
+                .setEntityId(discussPost.getId());
+        producer.send(event);
+
+
         return CommunityUtil.getJsonString(0, "发布成功");
     }
 
