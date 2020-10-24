@@ -7,8 +7,10 @@ import com.example.event.EventProducer;
 import com.example.service.CommentService;
 import com.example.service.DiscussPostService;
 import com.example.util.CommunityConstant;
+import com.example.util.CommunityRedis;
 import com.example.util.UserThreadLocal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +34,9 @@ public class CommentController  {
     @Autowired
     private EventProducer eventProducer;
 
+    @Autowired
+    private RedisTemplate<String,Object> redisTemplate;
+
     @PostMapping("/add/{discussId}")
     public String add(@PathVariable("discussId") int discussId, Comment comment) {
         comment.setUserId(users.getUser().getId());
@@ -39,7 +44,7 @@ public class CommentController  {
         comment.setCreateTime(new Date());
         commentService.addComment(comment);
 
-        //添加事件
+        //添加系统通知事件
         Event event = new Event()
                 .setUserId(users.getUser().getId())
                 .setEntityType(comment.getEntityType())
@@ -56,6 +61,7 @@ public class CommentController  {
             event.setEntityUserId(com.getUserId());
         }
 
+
         eventProducer.send(event);
 
 
@@ -65,6 +71,10 @@ public class CommentController  {
                     .setEntityId(discussId).setEntityType(CommunityConstant.POST_COMMENT)
                     .setTopic(CommunityConstant.TOPIC_TYPE_POST);
             eventProducer.send(event);
+
+            //增加分数
+            String redisKey= CommunityRedis.getScore();
+            redisTemplate.opsForSet().add(redisKey,discussId);
         }
 
 

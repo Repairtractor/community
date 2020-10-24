@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.controller.interceptor.DataInterceptor;
 import com.example.controller.interceptor.LoginRequireInterceptor;
 import com.example.controller.interceptor.MessageInterceptor;
 import com.example.controller.interceptor.UserIntereceptor;
@@ -19,6 +20,10 @@ public class WebMVcInterceptor implements WebMvcConfigurer {
     private LoginRequireInterceptor requireInterceptor;
 
     @Autowired
+    private DataInterceptor dataInterceptor;
+
+
+    @Autowired
     private MessageInterceptor messageInterceptor;
 
     @Override
@@ -26,5 +31,6 @@ public class WebMVcInterceptor implements WebMvcConfigurer {
         registry.addInterceptor(userInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.html");
         registry.addInterceptor(requireInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.html");
         registry.addInterceptor(messageInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.html");
+        registry.addInterceptor(dataInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.html");
     }
 }

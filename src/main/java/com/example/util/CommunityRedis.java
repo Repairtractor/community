@@ -22,6 +22,16 @@ public class CommunityRedis {
     //存储用户信息
     private static final  String PREFIX_USERS_STRING="users";
 
+    //存储统计数据uv 单日  和多日
+    private static final  String PREFIX_SINGLE_UV="uv:";
+    private static final  String PREFIX_DOUBLE_UV="uv:";
+    private static final  String PREFIX_SINGLE_DAU="dau:";
+    private static final  String PREFIX_DOUBLE_DAU="DAU:";
+
+    //统计帖子分数
+    private static final  String PREFIX_SCORE="score:";
+
+
 
     //存储已赞的帖子和userID  key:(like:entity:entityType:entityId) value: (userId)
     public static String getKeyName(int entityType, int entityId) {
@@ -58,5 +68,26 @@ public class CommunityRedis {
     }
 
 
+    //返回单挑UV "uv：date"->数据
+    public static String getSingleUv(String date){
+        return PREFIX_SINGLE_UV+date;
+    }
 
+    //返回多个日期的uv "uv:start:end"->ip  从而利用hll统计重复数据
+    public static String getDoubleUv(String start,String end){
+        return PREFIX_DOUBLE_UV+start+SPLIT_STRING+end;
+    }
+
+    //统计dau，多日的活跃用户， "dau:start:end"->下标为用户的id，然后值存true/false
+    public static String  getSingleDau(String date){
+        return PREFIX_SINGLE_DAU+date;
+    }
+
+    public static String getDoubleDau(String start,String end)  {
+        return PREFIX_DOUBLE_DAU+start+SPLIT_STRING+end;
+    }
+
+
+    //帖子分数
+    public static String  getScore(){return PREFIX_SCORE;}
 }

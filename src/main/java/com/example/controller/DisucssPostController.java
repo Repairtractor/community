@@ -7,9 +7,11 @@ import com.example.service.DiscussPostService;
 import com.example.service.LikeService;
 import com.example.service.UserService;
 import com.example.util.CommunityConstant;
+import com.example.util.CommunityRedis;
 import com.example.util.CommunityUtil;
 import com.example.util.UserThreadLocal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -36,13 +38,23 @@ public class DisucssPostController {
     @Autowired
     private EventProducer producer;
 
+    @Autowired
+    private RedisTemplate<String,Object> template;
 
+
+    /**
+     *
+     * @param model
+     * @param page
+     * @param orderMode 前台用来分辨按照什么排序，0是时间，1是热度
+     * @return
+     */
     @RequestMapping(path = "/index", method = RequestMethod.GET)
-    public String getDiscussPost(Model model, Page page) {
+    public String getDiscussPost(Model model, Page page,@RequestParam(name = "orderMode",defaultValue = "0")int orderMode) {
         page.setRows(discus.selectDiscussPostRows(0));
-        page.setPath("index");
+        page.setPath("index?orderMode="+orderMode);
 
-        List<DiscussPost> fields = discus.selectFields(0, page.getOffset(), page.getLimit());
+        List<DiscussPost> fields = discus.selectFields(0, page.getOffset(), page.getLimit(),orderMode);
         List<Map<String, Object>> result = new ArrayList<>();
 
         for (DiscussPost post : fields) {
@@ -58,6 +70,7 @@ public class DisucssPostController {
             result.add(map);
         }
         model.addAttribute("result", result);
+        model.addAttribute("orderMode",orderMode);
 
         return "index";
     }
@@ -83,6 +96,10 @@ public class DisucssPostController {
                 .setEntityId(discussPost.getId());
         producer.send(event);
 
+        //增加分数
+        String redisKey= CommunityRedis.getScore();
+        template.opsForSet().add(redisKey,discussPost.getId());
+
 
         return CommunityUtil.getJsonString(0, "发布成功");
     }
@@ -98,6 +115,7 @@ public class DisucssPostController {
 
         //设置分页的属性
         page.setPath("/getPost/" + post.getId());
+        //获取这个帖子下的回帖的行数
         page.setRows(commentService.getCommentRows(CommunityConstant.POST_COMMENT, post.getId()));
         page.setLimit(5);
 
@@ -169,6 +187,59 @@ public class DisucssPostController {
 
         return "site/discuss-detail";
     }
+
+    //置顶
+    @PostMapping(path = "/top")
+    @ResponseBody
+    public String SetTop(int id){
+        User user=users.getUser();
+        discus.updateTypeById(id,1);
+
+        Event event=new Event().setTopic(CommunityConstant.TOPIC_TYPE_POST)
+                .setUserId(user.getId()).setEntityType(CommunityConstant.POST_COMMENT)
+                .setEntityId(id);
+        producer.send(event);
+        return CommunityUtil.getJsonString(0);
+    }
+
+
+    //加精
+    @PostMapping(path = "/wonderful")
+    @ResponseBody
+    public String setRefining(int id){
+        User user= users.getUser();
+
+        discus.updateStatusById(id,1);
+
+        Event event=new Event().setTopic(CommunityConstant.TOPIC_TYPE_POST)
+                .setUserId(user.getId()).setEntityType(CommunityConstant.POST_COMMENT)
+                .setEntityId(id);
+        producer.send(event);
+
+        //增加分数
+        String redisKey= CommunityRedis.getScore();
+        template.opsForSet().add(redisKey,id);
+
+        return CommunityUtil.getJsonString(0);
+
+    }
+
+    //删除
+    @PostMapping(path = "/delete")
+    @ResponseBody
+    public String delete(int id){
+        User user= users.getUser();
+
+        discus.updateStatusById(id,2);
+
+        Event event=new Event().setTopic(CommunityConstant.TOPIC_TYPE_DELETE)
+                .setUserId(user.getId()).setEntityType(CommunityConstant.POST_COMMENT)
+                .setEntityId(id);
+        producer.send(event);
+        return CommunityUtil.getJsonString(0);
+
+    }
+
 
 
 }

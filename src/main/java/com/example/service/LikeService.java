@@ -39,6 +39,11 @@ public class LikeService {
         });
     }
 
+    /**
+     * 查看某个用户的被点赞数量
+     * @param userId
+     * @return
+     */
     public int likeCount(int userId){
         String keyUserName = CommunityRedis.getKeyName(userId);
 

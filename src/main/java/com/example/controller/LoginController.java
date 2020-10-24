@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -136,6 +137,7 @@ public class LoginController {
         int expired = rememberMe ? CommunityConstant.REMEMBER_EXPIRED_SECOND : CommunityConstant.DEFAULT_EXPIRED_SECOND;
 
         Map<String, Object> map = userService.login(userName, password, expired);
+
         if (map.containsKey("ticket")) {
             Cookie cookie = new Cookie("ticket", map.get("ticket").toString());
             cookie.setPath(content);
@@ -153,7 +155,13 @@ public class LoginController {
     @GetMapping(path = "/logout")
     public String logout(@CookieValue("ticket") String ticket) {
         userService.logout(ticket);
+        SecurityContextHolder.clearContext();
         return "redirect:login";
+    }
+
+    @GetMapping(path="/denied")
+    public String denied(){
+        return "error/404";
     }
 
 

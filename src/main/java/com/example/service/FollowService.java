@@ -97,6 +97,7 @@ public class FollowService {
                     int targetId=(Integer)obj;
                     User u = userService.selectUserById(targetId);
                     map.put("user",u);
+                    //score是后面的分数
                     Double score = redisTemplate.opsForZSet().score(followeeString, targetId);
                     Date date = new Date(score.longValue());
                     map.put("dateTime",date);

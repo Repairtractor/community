@@ -96,4 +96,30 @@ public class EventConsumer implements CommunityConstant {
     }
 
 
+    @KafkaListener(topics = {TOPIC_TYPE_DELETE})
+    public void handleTopMessage(ConsumerRecord<String, String> consumerRecord) {
+
+        if (consumerRecord == null || consumerRecord.value() == null) {
+            logger.error("消息错误");
+            return;
+        }
+
+        //接收收到的消息，转成对象，这里注意转换方法
+        Event event =  JSONObject.parseObject(consumerRecord.value().toString(),Event.class);
+        if (event == null) {
+            logger.error("消息格式不正确");
+            return;
+        }
+
+        int entityId = event.getEntityId();
+
+        EsService.deleteEsPost(entityId);
+    }
+
+
+
+
+
+
+
 }

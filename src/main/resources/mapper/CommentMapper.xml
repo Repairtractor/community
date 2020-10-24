@@ -16,6 +16,7 @@
     <select id="getComments" resultType="Comment">
         select <include refid="selectSql"></include> from comment where entity_type=#{entityType} and status=0 and
         entity_id=#{entityId} order by create_time desc limit #{offset },#{limit}
+
     </select>
 
     <select id="getCommentRows" resultType="_int">

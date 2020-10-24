@@ -18,9 +18,9 @@ public class DiscussPostMapperTest {
 
     @Test
     public void test() {
-        discus.selectFields(0, 0, 10).forEach(System.out::println);
+        discus.selectFields(0, 0, 10,0).forEach(System.out::println);
 
-        discus.selectFields(149, 0, 10).forEach(System.out::println);
+        discus.selectFields(149, 0, 10,0).forEach(System.out::println);
 
         System.out.println(discus.selectDirectionRows(149));
 

@@ -52,15 +52,15 @@ public class EsTest {
     public void test1() {
 
         //使用saveAll方法会因为找不到type报错，这可能是版本兼容的问题
-        repository.saveAll(discussPostMapper.selectFields(101, 0, 100));
-        repository.saveAll(discussPostMapper.selectFields(102, 0, 100));
-        repository.saveAll(discussPostMapper.selectFields(103, 0, 100));
-        repository.saveAll(discussPostMapper.selectFields(111, 0, 100));
-        repository.saveAll(discussPostMapper.selectFields(112, 0, 100));
-        repository.saveAll(discussPostMapper.selectFields(131, 0, 100));
-        repository.saveAll(discussPostMapper.selectFields(132, 0, 100));
-        repository.saveAll(discussPostMapper.selectFields(133, 0, 100));
-        repository.saveAll(discussPostMapper.selectFields(134, 0, 100));
+        repository.saveAll(discussPostMapper.selectFields(101, 0, 100,0));
+        repository.saveAll(discussPostMapper.selectFields(102, 0, 100,0));
+        repository.saveAll(discussPostMapper.selectFields(103, 0, 100,0));
+        repository.saveAll(discussPostMapper.selectFields(111, 0, 100,0));
+        repository.saveAll(discussPostMapper.selectFields(112, 0, 100,0));
+        repository.saveAll(discussPostMapper.selectFields(131, 0, 100,0));
+        repository.saveAll(discussPostMapper.selectFields(132, 0, 100,0));
+        repository.saveAll(discussPostMapper.selectFields(133, 0, 100,0));
+        repository.saveAll(discussPostMapper.selectFields(134, 0, 100,0));
 
     }
 

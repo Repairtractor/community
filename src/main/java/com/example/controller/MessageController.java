@@ -153,9 +153,9 @@ public class MessageController {
         User user = users.getUser();
 
         //评论
-        Map<String, Object> map = new HashMap<>();
         Message message = messageService.selectLatestMessage(user.getId(), CommunityConstant.TOPIC_TYPE_COMMENT);
         if (message != null) {
+            Map<String, Object> map = new HashMap<>();
             map.put("message", message);
 
             //把content中的数据转化成对象，取出来
@@ -174,14 +174,16 @@ public class MessageController {
 
             map.put("commentCount", count);
             map.put("unReadCommentCount", unReadCount);
+            model.addAttribute("commentNotices", map);
         }
 
-        model.addAttribute("commentNotices", map);
+
 
 
         //点赞
         message = messageService.selectLatestMessage(user.getId(), CommunityConstant.TOPIC_TYPE_LIKE);
         if (message != null) {
+            Map<String, Object> map = new HashMap<>();
             map = new HashMap<>();
             map.put("message", message);
 
@@ -200,14 +202,16 @@ public class MessageController {
 
             map.put("likeCount", count);
             map.put("unLikeCount", unReadCount);
+            model.addAttribute("likeNotices", map);
         }
 
-        model.addAttribute("likeNotices", map);
+
 
 
         //关注 ，这里注意entityId就是我关注的那个用户id
         message = messageService.selectLatestMessage(user.getId(), CommunityConstant.TOPIC_TYPE_FOLLOW);
         if (message != null) {
+            Map<String, Object> map = new HashMap<>();
             map = new HashMap<>();
             map.put("message", message);
 
@@ -231,9 +235,10 @@ public class MessageController {
         }
 
 
-        //查询未读消息数量
+        //查询未读私信消息数量
         int unLetterCount = messageService.selectLetterUnReadCount(user.getId(), null);
         model.addAttribute("unLetterCount", unLetterCount);
+        //未读系统消息数量
         int unRead = messageService.selectUnReadCount(user.getId(), null);
         model.addAttribute("unRead", unRead);
 

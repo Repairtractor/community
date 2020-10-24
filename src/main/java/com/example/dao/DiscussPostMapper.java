@@ -15,7 +15,7 @@ public interface DiscussPostMapper {
      * @param offset 显示数据起点
      * @param limit 最大条目数 一页
      */
-    List<DiscussPost> selectFields(int userId,int offset,int limit);
+    List<DiscussPost> selectFields(int userId,int offset,int limit,int orderMode);
 
     /**
      *
@@ -29,4 +29,14 @@ public interface DiscussPostMapper {
     DiscussPost findDiscussPostById(int id);
 
     int updateSetCommentCountById(int id,int commentCount);
+
+    //置顶
+    void updateTypeById(int id,int type);
+
+    //加精
+    void updateStatusById(int id,int status);
+
+    //修改分数
+    void updateScoreById(int id, double score  );
+
 }

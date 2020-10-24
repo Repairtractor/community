@@ -6,6 +6,10 @@ import com.example.service.UserService;
 import com.example.util.CommunityUtil;
 import com.example.util.UserThreadLocal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,6 +37,14 @@ public class UserIntereceptor implements HandlerInterceptor {
             if (loginTicket != null && loginTicket.getStatus() == 0 && loginTicket.getExpired().after(new Date())) {
                 User user = userService.selectUserById(loginTicket.getUserId());
                 if (user != null)users.addUser(user);
+
+                //这里用户已经登录成功，此时需要把登录认证存入securityContext中，用于security授权
+                //获取登录凭证
+                Authentication authentication=new UsernamePasswordAuthenticationToken(
+                        user,user.getPassword(), userService.getAuthorities(user.getId()));
+
+                //传入setContext中
+                SecurityContextHolder.setContext(new SecurityContextImpl(authentication));
             }
         }
         return true;
@@ -48,5 +60,6 @@ public class UserIntereceptor implements HandlerInterceptor {
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         if (users.getUser() != null) users.remove();
+        SecurityContextHolder.clearContext();
     }
 }

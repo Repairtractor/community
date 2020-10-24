@@ -3,22 +3,17 @@ package com.example.service;
 import com.example.dao.UserMapper;
 import com.example.entity.LoginTicket;
 import com.example.entity.User;
-import com.example.util.CommunityConstants;
-import com.example.util.CommunityRedis;
-import com.example.util.CommunityUtil;
-import com.example.util.MailClient;
+import com.example.util.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -258,5 +253,20 @@ public class UserService {
         redisTemplate.delete(usersString);
     }
 
+
+    //这是userDetails设置权限，因为没有认证，所以需要手动吧权限存入security
+    public Collection<? extends GrantedAuthority> getAuthorities(int userId){
+        User user=this.selectUserById(userId);
+
+        List<GrantedAuthority> list=new ArrayList<GrantedAuthority>();
+        list.add((GrantedAuthority) () -> {
+            switch (user.getType()){
+                case 1 :return CommunityConstant.AUTHORITY_USER;
+                case 2:return CommunityConstant.AUTHORITY_ADMIN;
+                default:return CommunityConstant.AUTHORITY_MODERATOR;
+            }
+        });
+        return list;
+    }
 
 }

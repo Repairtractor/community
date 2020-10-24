@@ -43,10 +43,19 @@ public interface CommunityConstant {
     String TOPIC_TYPE_COMMENT="comment";
     String TOPIC_TYPE_FOLLOW="follow";
     String TOPIC_TYPE_POST="post";
+    String TOPIC_TYPE_DELETE="delete";
 
     /**
      * 系统发送消息人
      */
     int SYSTEM_SEND_MESSAGE_MAN =1;
+
+
+    /**
+     * 添加访问权限，用户 管理 版主
+     */
+    String AUTHORITY_USER="user";
+    String AUTHORITY_ADMIN="admin";
+    String AUTHORITY_MODERATOR="moderator";
 
 }
